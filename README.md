@@ -7,8 +7,6 @@ Pay is a payments engine for Ruby on Rails 4.2 and higher.
 * Stripe (API version [2018-08-23](https://stripe.com/docs/upgrades#2018-08-23) or higher required)
 * Braintree
 
-Want to add a new payment provider? Contributions are welcome and the instructions [are here](https://github.com/jasoncharnes/pay/wiki/New-Payment-Provider).
-
 ## Installation
 Add this line to your application's Gemfile:
 
@@ -53,9 +51,6 @@ This will install two migrations:
 - db/migrate/add_fields_to_users.pay.rb
 - db/migrate/create_charges.pay.rb
 
-#### Non-User Model
-If you need to use a model other than `User`, check out the [wiki page](https://github.com/jasoncharnes/pay/wiki/Model-Other-Than-User).
-
 #### Run the Migrations
 Finally, run the migrations with `$ rake db:migrate`
 
@@ -85,8 +80,6 @@ class User < ActiveRecord::Base
   include Pay::Billable
 end
 ```
-
-**To see how to use Stripe Elements JS & Devise, [click here](https://github.com/jasoncharnes/pay/wiki/Using-Stripe-Elements-and-Devise).**
 
 To sync over customer names, your Billable model should respond to
 `first_name` and `last_name` methods. We'll sync these over to your
@@ -334,10 +327,6 @@ user.subscription.resume
 user = User.find_by(email: 'lucille2@bluthcompany.co')
 user.subscription.processor_subscription
 ```
-
-## Contributors
-* [Jason Charnes](https://twitter.com/jmcharnes)
-* [Chris Oliver](https://twitter.com/excid3)
 
 ## Contributing
 👋 Thanks for your interest in contributing. Feel free to fork this repo.
